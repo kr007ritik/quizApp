@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+    font-family: 'Lora', serif;
+}
+
+.container{
+    margin: 100px auto;
+    border: 1px solid#fff;
+    border-radius: 10px;
+    max-width:500px;
+    min-height: 295px;
+}
+
+.questionSection{
+    display: grid;
+    grid-template-columns:1fr 35px;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0 10px 10px;
+    border-bottom: 1px dotted #fff ;
+}
+
+.question{
+    font-weight: 400;
+}
+
+.questionNum{
+    font-size: 18px;
+    color: #999;
+}
+
+.options ul{
+    margin: 10px;
+    list-style-type: none;
+}
+
+.options ul li{
+    margin: 10px 0;
+}
+
+
+.options ul li button{
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
+    height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nextBtn{
+    text-align: center;
+}
+
+.nextBtn button{
+    font-size: 20px;
+    padding: 5px 10px;
+    margin: 10px;
+    background-color: navy;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.winnerMSg{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+}
