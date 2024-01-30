@@ -55,6 +55,8 @@ body{
     height: 35px;
     font-size: 20px;
     cursor: pointer;
+    border: 0;
+    border-radius: 5px;
 }
 
 .nextBtn{
@@ -77,4 +79,14 @@ body{
     justify-content: center;
     align-items: center;
     height: 220px;
+}
+
+.correct{
+    background-color: #7ef57e75;
+    color: #fff;
+}
+
+.wrong{
+    background-color: rgb(235, 79, 79);
+    color: #fff;
 }
