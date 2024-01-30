@@ -94,3 +94,9 @@ body {
     background-color: #d22d3b67;
     color: #d22d3a;
 }
+
+@media only screen and (max-width: 510px) {
+    .container {
+        margin: 100px 15px;
+    }
+}
