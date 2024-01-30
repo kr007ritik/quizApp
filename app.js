@@ -11,44 +11,47 @@ const arrOfQuestion = [
   ["Capital of INDIA?", "Goa", "Mumbai", "Delhi", "Patna"],
   ["Capital of Bihar?", "Gaya", "Patna", "Ranchi", "Kolkata"],
 ];
-const answerKey = ["Tiger", "Lotus", "Peacock", "Delhi","Patna"];
+const answerKey = ["Tiger", "Lotus", "Peacock", "Delhi", "Patna"];
 
 const NumOfQues = arrOfQuestion.length;
-
 // Print questions
-for (let j = 1; j < arrOfQuestion[0].length; j++) {
-  question.innerHTML = `Q. ${arrOfQuestion[0][0]}`;
-  const li = document.createElement("li");
-  const button = document.createElement("button");
-  ul.appendChild(li);
-  li.appendChild(button);
-  button.innerHTML = arrOfQuestion[0][j];
-}
-
 let activeQues = 0;
 
-questionNum.innerHTML = `${activeQues}/${NumOfQues}`;
-nextBtn.addEventListener("click", () => {
+function printQues(activeQues) {
+  ul.classList = "";
   ul.style.pointerEvents = "auto";
-  activeQues++;
-  if (activeQues >= arrOfQuestion.length) {
+  if (activeQues == NumOfQues) {
     question.innerHTML = "Result";
     ul.innerHTML = "";
     nextBtn.remove();
     winnerMSg.style.display = "flex";
-    winnerMSg.innerHTML= `${NumOfCorrectAns} points out of ${NumOfQues}`
+    winnerMSg.innerHTML = `${NumOfCorrectAns} points out of ${NumOfQues}`;
   } else {
     ul.innerHTML = "";
-    for (let j = 1; j < arrOfQuestion[activeQues].length; j++) {
-      question.innerHTML = `Q. ${arrOfQuestion[activeQues][0]}`;
+    let numOfOptions = arrOfQuestion[activeQues].length;
+    question.innerHTML = `Q. ${arrOfQuestion[activeQues][0]}`;
+    for (let i = 1; i < numOfOptions; i++) {
       const li = document.createElement("li");
       const button = document.createElement("button");
       ul.appendChild(li);
       li.appendChild(button);
-      button.innerHTML = arrOfQuestion[activeQues][j];
+      button.innerHTML = arrOfQuestion[activeQues][i];
+      questionNum.innerHTML = `${activeQues + 1}/${NumOfQues}`;
     }
   }
-});
+}
+
+printQues(activeQues);
+questionNum.innerHTML = `${activeQues + 1}/${NumOfQues}`;
+
+nextBtn.addEventListener(
+  "click",
+  function () {
+    activeQues++;
+    printQues(activeQues);
+  },
+  false
+);
 
 // Check Answer
 let NumOfCorrectAns = 0;
